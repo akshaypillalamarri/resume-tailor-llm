@@ -14,7 +14,8 @@ This project demonstrates real-world LLM fine-tuning, parameter-efficient traini
 
 ## What It Does
 
-**Input:** A job description + your base resume
+**Input:** A job description plus your base resume
+
 **Output:** A tailored, ATS-optimized resume that:
 
 - Reorders skills by relevance to the JD
@@ -23,9 +24,8 @@ This project demonstrates real-world LLM fine-tuning, parameter-efficient traini
 - Maintains factual accuracy from your original resume
 
 ## Architecture
-Job Description ─┐
-├──→ TinyLlama-1.1B + LoRA Adapter ──→ Tailored Resume
-Base Resume ─────┘
+
+Job Description and Base Resume are passed through TinyLlama-1.1B with a fine-tuned LoRA adapter, which generates a tailored resume optimized for the specific role.
 
 ## Tech Stack
 
@@ -40,13 +40,13 @@ Base Resume ─────┘
 ## Training Details
 
 - **Method:** LoRA (Low-Rank Adaptation)
-- **Trainable params:** ~1% of base model
-- **Target modules:** `q_proj`, `k_proj`, `v_proj`, `o_proj`
+- **Trainable params:** approximately 1% of base model
+- **Target modules:** q_proj, k_proj, v_proj, o_proj
 - **Rank (r):** 16
 - **Alpha:** 32
 - **Dropout:** 0.05
 - **Epochs:** 3
-- **Batch size:** 2 (with gradient accumulation of 4)
+- **Batch size:** 2 with gradient accumulation of 4
 - **Learning rate:** 2e-4
 - **Dataset:** 15+ curated examples of base resume to tailored resume pairs across roles (AI Engineer, SDET, Salesforce Developer, Data Engineer, ML Engineer, etc.)
 
@@ -60,27 +60,23 @@ The model successfully learns to:
 - Preserve factual content while reformatting
 
 ## Project Structure
-resume-tailor-llm/
-├── resume_tailor_finetune.ipynb   # Main fine-tuning notebook (run in Colab)
-├── resume_dataset.json             # Training data
-├── app.py                          # Gradio demo for HF Spaces
-├── requirements.txt                # Dependencies
-└── README.md
+
+The repo includes the main fine-tuning notebook (resume_tailor_finetune.ipynb), the training data (resume_dataset.json), the Gradio demo app for HF Spaces (app.py), the dependencies file (requirements.txt), and this README.
 
 ## How To Run
 
 ### Step 1 — Fine-tune in Colab
 
-1. Open `resume_tailor_finetune.ipynb` in Google Colab
+1. Open resume_tailor_finetune.ipynb in Google Colab
 2. Set runtime to T4 GPU
-3. Upload `resume_dataset.json`
+3. Upload resume_dataset.json
 4. Run cells sequentially
 5. Push adapter to Hugging Face Hub
 
 ### Step 2 — Deploy demo
 
 1. Create a new Hugging Face Space (Gradio template)
-2. Upload `app.py` and `requirements.txt`
+2. Upload app.py and requirements.txt
 3. The Space auto-deploys
 
 ## What I Learned
