@@ -2,7 +2,7 @@
 
 A fine-tuned **TinyLlama-1.1B-Chat** model that automatically tailors resumes to match specific job descriptions. Built with **LoRA (Low-Rank Adaptation)** for parameter-efficient fine-tuning.
 
-[**Live Demo:** [Try it on Hugging Face Spaces](https://huggingface.co/spaces/akshayrinku/tinyllama-resume-tailor-lora)](https://huggingface.co/spaces/akshayrinku/resume-tailor-demo)
+**Live Demo:** [Try it on Hugging Face Spaces](https://huggingface.co/spaces/akshayrinku/resume-tailor-demo)
 
 **Model on HF Hub:** [akshayrinku/tinyllama-resume-tailor-lora](https://huggingface.co/akshayrinku/tinyllama-resume-tailor-lora)
 
