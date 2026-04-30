@@ -1,0 +1,77 @@
+[
+  {
+    "job_description": "AI/ML Engineer role focused on LLM fine-tuning, RAG pipelines, and multi-agent systems. Required: Python, LangGraph, Hugging Face, vector databases.",
+    "base_resume": "Akshay Pillalamarri\nSoftware Developer at Cloud Nexus Solutions\nSkills: Python, Java, JavaScript, Selenium, Salesforce, REST APIs, Azure DevOps\nProjects: AI Hedge Fund (LangGraph, CrewAI), Q&A Chatbot (RAG), Test Framework (Selenium)",
+    "tailored_resume": "Akshay Pillalamarri\nAI/ML Engineer | Software Developer\n\nCORE SKILLS\nPython | LangGraph | Multi-Agent Systems | RAG Pipelines | Hugging Face | Vector Databases | LLM Fine-Tuning\n\nKEY PROJECTS\nAI-Powered Hedge Fund — Built multi-agent system using LangGraph orchestration and CrewAI for real-time stock analysis and risk assessment\nQ&A PDF Chatbot — Engineered RAG pipeline for document-aware question answering with semantic chunking and retrieval\n\nEXPERIENCE\nSoftware Developer at Cloud Nexus Solutions — Built APIs and automation tools using Python and Azure DevOps"
+  },
+  {
+    "job_description": "SDET / QA Automation Engineer needed. Required: Selenium WebDriver, TestNG, Java, CI/CD pipelines, Page Object Model.",
+    "base_resume": "Akshay Pillalamarri\nSoftware Developer\nSkills: Python, Java, JavaScript, Selenium, Tosca, Salesforce\nProjects: AI Hedge Fund, CI/CD Test Framework, Q&A Chatbot",
+    "tailored_resume": "Akshay Pillalamarri\nSDET | QA Automation Engineer\n\nCORE SKILLS\nSelenium WebDriver | TestNG | Java | Page Object Model | CI/CD Pipelines | Jenkins | Apache POI | Tosca AE1/AS2\n\nKEY PROJECTS\nAutomated CI/CD Test Framework — Designed data-driven framework using Java, Selenium, TestNG with Jenkins integration. Reduced regression execution time by 60%\nImplemented Page Object Model architecture for maintainable test automation\n\nCERTIFICATIONS\nTricentis Tosca AE1, AS2 | Selenium WebDriver with Java"
+  },
+  {
+    "job_description": "Salesforce Developer needed. Required: Apex, Lightning, REST APIs, JavaScript, HTML/CSS.",
+    "base_resume": "Akshay Pillalamarri\nSoftware Developer at Cloud Nexus\nSkills: Python, Java, JavaScript, Selenium, Salesforce, REST APIs\nProjects: AI Hedge Fund, Test Framework, Salesforce CRM customization",
+    "tailored_resume": "Akshay Pillalamarri\nSalesforce Developer\n\nCORE SKILLS\nSalesforce CRM | JavaScript | HTML5 | CSS3 | REST APIs | Apex Concepts | Lightning Components | Azure DevOps | TFS\n\nEXPERIENCE\nSoftware Developer at Cloud Nexus Solutions\n- Develop and maintain Salesforce-based enterprise applications using custom HTML, CSS, JavaScript components\n- Design and integrate RESTful APIs for seamless data exchange with third-party services\n- Manage build and release processes via Azure DevOps and TFS\n- Coordinate with QA on system testing and UAT"
+  },
+  {
+    "job_description": "Full Stack Developer role. Required: React, Node.js, JavaScript, REST APIs, MongoDB, Git.",
+    "base_resume": "Akshay Pillalamarri\nSoftware Developer\nSkills: JavaScript, TypeScript, Python, Java, Node.js, REST APIs, Git\nProjects: Intelligent Notification System (Node.js), Q&A Chatbot, Test Framework",
+    "tailored_resume": "Akshay Pillalamarri\nFull Stack Developer\n\nCORE SKILLS\nJavaScript (ES6+) | TypeScript | Node.js | React | REST APIs | Git | HTML5 | CSS3\n\nKEY PROJECTS\nIntelligent Notification System — Built end-to-end Node.js pipeline that filters, summarizes, and routes alerts using LLaMA-3 with Telegram API integration\nFull-stack web applications using JavaScript and modern frontend frameworks\n\nEXPERIENCE\nDevelop user-facing components with HTML, CSS, JavaScript and integrate with backend REST APIs"
+  },
+  {
+    "job_description": "Data Engineer position. Required: Python, SQL, ETL pipelines, Apache Airflow, AWS.",
+    "base_resume": "Akshay Pillalamarri\nSoftware Developer\nSkills: Python, Java, SQL, REST APIs, Azure, Git\nProjects: AI Hedge Fund (data pipelines), Q&A Chatbot",
+    "tailored_resume": "Akshay Pillalamarri\nData Engineer\n\nCORE SKILLS\nPython | SQL | ETL Pipelines | Data Processing | REST APIs | Cloud Platforms (Azure, AWS) | Git\n\nKEY PROJECTS\nAI-Powered Hedge Fund — Engineered data ingestion pipeline processing real-time financial datasets with Python\nBuilt automated data validation and transformation workflows for enterprise applications\n\nEXPERIENCE\nDesign and develop reports with various report tools, integrate APIs for data exchange between internal systems and third-party services"
+  },
+  {
+    "job_description": "Machine Learning Engineer for computer vision applications. Required: Python, TensorFlow, OpenCV, CNNs, PyTorch.",
+    "base_resume": "Akshay Pillalamarri\nAI Engineer\nSkills: Python, Java, ML/DL, TensorFlow, OpenCV, CNNs\nProjects: Autocolorization (CNN), Virtual Mouse (OpenCV), AI Hedge Fund",
+    "tailored_resume": "Akshay Pillalamarri\nMachine Learning Engineer | Computer Vision\n\nCORE SKILLS\nPython | TensorFlow | OpenCV | CNNs | Computer Vision | Deep Learning | MediaPipe | PyTorch (familiar)\n\nKEY PROJECTS\nAutocolorization of Black & White Images — Trained CNN with encoder-decoder architecture and skip connections for grayscale-to-color conversion using TensorFlow\nVirtual Mouse via Gesture Recognition — Built real-time touchless mouse controller using OpenCV and MediaPipe for hand gesture interpretation\n\nEDUCATION\nMS in Computer Science with focus on AI, ML, and Computer Vision research"
+  },
+  {
+    "job_description": "DevOps Engineer needed. Required: CI/CD, Jenkins, Docker, Kubernetes, AWS, Git.",
+    "base_resume": "Akshay Pillalamarri\nSoftware Developer\nSkills: Python, Java, Jenkins, Azure DevOps, Git, CI/CD\nProjects: CI/CD Test Framework with Jenkins",
+    "tailored_resume": "Akshay Pillalamarri\nDevOps Engineer\n\nCORE SKILLS\nCI/CD Pipelines | Jenkins | Azure DevOps | Git | TFS | GitHub Actions | Docker (familiar) | Build & Release Management\n\nKEY PROJECTS\nAutomated CI/CD Test Framework — Implemented end-to-end CI/CD pipeline using Jenkins for automated test execution on code changes, reducing regression cycles by 60%\n\nEXPERIENCE\nManage build and release processes across System Test, UAT, and Production environments using Azure DevOps and TFS"
+  },
+  {
+    "job_description": "Python Backend Developer. Required: Python, FastAPI, REST APIs, PostgreSQL, Docker.",
+    "base_resume": "Akshay Pillalamarri\nSoftware Developer\nSkills: Python, Java, REST APIs, SQL, Git\nProjects: AI Hedge Fund, Q&A Chatbot, Notification System",
+    "tailored_resume": "Akshay Pillalamarri\nPython Backend Developer\n\nCORE SKILLS\nPython | FastAPI | REST APIs | SQL | PostgreSQL | Git | Docker (familiar) | Microservices\n\nKEY PROJECTS\nAI-Powered Hedge Fund — Built Python backend services with REST API endpoints for real-time data processing and ML model serving\nIntelligent Notification System — Developed Node.js backend pipeline with API integrations for alert routing\n\nEXPERIENCE\nDesign and develop RESTful APIs for seamless data exchange between internal systems and third-party services"
+  },
+  {
+    "job_description": "AI Automation Engineer at no-code platform company. Required: Python, automation, RPA, low-code platforms, customer-facing experience.",
+    "base_resume": "Akshay Pillalamarri\nSoftware Developer & SDET\nSkills: Python, Java, Selenium, Tosca, Make.com, Zapier, Airtable, Salesforce\nProjects: CI/CD Framework, AI Hedge Fund, Q&A Chatbot",
+    "tailored_resume": "Akshay Pillalamarri\nAI Automation Engineer\n\nCORE SKILLS\nNo-Code/Low-Code Platforms | Make.com | Zapier | Airtable | Chatbase | Tosca AE1/AS2 | Selenium | Python | RPA Concepts | Customer-Facing Delivery\n\nKEY PROJECTS\nQ&A PDF Chatbot — Built no-code RAG-based document intelligence using Chatbase and OpenAI\nNo-code automation workflows using Make.com and Zapier with Airtable as backend\n\nEXPERIENCE\nWork directly with clients to gather requirements and translate business needs into technical automation solutions. Coordinate UAT and post-production support."
+  },
+  {
+    "job_description": "AI/ML Engineer with GenAI focus. Required: LLMs, prompt engineering, OpenAI, Anthropic, RAG, vector databases.",
+    "base_resume": "Akshay Pillalamarri\nAI Engineer\nSkills: Python, LangGraph, CrewAI, Gemini API, OpenAI, RAG\nProjects: AI Hedge Fund, Q&A Chatbot, Notification System",
+    "tailored_resume": "Akshay Pillalamarri\nAI/ML Engineer | GenAI Specialist\n\nCORE SKILLS\nLLMs | OpenAI API | Anthropic Claude API | Gemini API | LangGraph | CrewAI | RAG Pipelines | Prompt Engineering | Vector Embeddings | Multi-Agent Systems\n\nKEY PROJECTS\nAI-Powered Hedge Fund — Multi-agent GenAI system using LangGraph orchestration with Gemini API for real-time financial analysis\nQ&A PDF Chatbot — RAG-based document QA with semantic chunking, vector retrieval, and LLM-powered generation\nIntelligent Notification System — LLM-driven alert routing using locally-hosted LLaMA-3"
+  },
+  {
+    "job_description": "Junior Developer role. Required: any programming language, eagerness to learn, team collaboration.",
+    "base_resume": "Akshay Pillalamarri\nSoftware Developer at Cloud Nexus\nSkills: Python, Java, JavaScript, Salesforce, Git\nMS in Computer Science",
+    "tailored_resume": "Akshay Pillalamarri\nJunior Software Developer\n\nABOUT\nMS in Computer Science graduate with hands-on experience in software development, agile collaboration, and continuous learning. Passionate about delivering quality solutions in team environments.\n\nCORE SKILLS\nPython | Java | JavaScript | Git | Agile/Scrum | Cross-functional Collaboration | Code Reviews\n\nEXPERIENCE\nJunior Software Developer at Cloud Nexus Solutions\n- Collaborate in agile sprint cycles including planning, code reviews, and retrospectives\n- Work with cross-functional teams including QA, business analysts, and clients\n- Continuously learn new technologies and contribute to team success"
+  },
+  {
+    "job_description": "Cloud Engineer position. Required: AWS, Azure, cloud architecture, CI/CD, Python.",
+    "base_resume": "Akshay Pillalamarri\nSoftware Developer\nSkills: Python, Java, Azure DevOps, AWS, GCP, REST APIs\nProjects: AI Hedge Fund (cloud), CI/CD Framework",
+    "tailored_resume": "Akshay Pillalamarri\nCloud Engineer\n\nCORE SKILLS\nAzure | AWS | GCP | Azure DevOps | CI/CD Pipelines | Python | REST APIs | Cloud Architecture | TFS | Build & Release Management\n\nKEY PROJECTS\nAI-Powered Hedge Fund — Deployed cloud-based ML pipeline with Gemini API integration\nCI/CD Test Framework — Cloud-integrated automated testing pipeline with Jenkins\n\nEXPERIENCE\nManage cloud-based build and release processes across multiple environments using Azure DevOps and TFS"
+  },
+  {
+    "job_description": "Mobile Developer needed. Required: React Native, JavaScript, REST APIs, Git.",
+    "base_resume": "Akshay Pillalamarri\nSoftware Developer\nSkills: JavaScript, TypeScript, Python, REST APIs, Git\nProjects: Various JS-based projects",
+    "tailored_resume": "Akshay Pillalamarri\nMobile Developer\n\nCORE SKILLS\nJavaScript (ES6+) | TypeScript | React Native (familiar) | REST APIs | Git | Cross-platform Development | Mobile UI Patterns\n\nKEY PROJECTS\nFull-stack JavaScript applications with REST API integration\nResponsive web components with modern JavaScript frameworks\n\nEXPERIENCE\nDevelop applications using JavaScript and integrate with backend REST APIs for seamless data exchange"
+  },
+  {
+    "job_description": "Cybersecurity Analyst role. Required: security testing, penetration testing, Python scripting.",
+    "base_resume": "Akshay Pillalamarri\nSoftware Developer & SDET\nSkills: Python, Java, Selenium, security testing\nProjects: Test Framework, automation tools",
+    "tailored_resume": "Akshay Pillalamarri\nCybersecurity Analyst | Security Testing\n\nCORE SKILLS\nSecurity Testing | Python Scripting | Test Automation | Selenium | API Security Testing | Penetration Testing Concepts\n\nKEY PROJECTS\nAutomated Test Framework — Includes security testing modules for input validation and API endpoint testing\nPython-based automation scripts for security validation\n\nEXPERIENCE\nPerform unit, system, and regression testing including security validation for enterprise applications"
+  },
+  {
+    "job_description": "Technical Product Manager role. Required: product strategy, agile, technical background, customer empathy.",
+    "base_resume": "Akshay Pillalamarri\nSoftware Developer\nSkills: Python, Java, Salesforce, agile/scrum, requirements gathering, UAT coordination\nProjects: Multiple AI and automation projects",
+    "tailored_resume": "Akshay Pillalamarri\nTechnical Product Manager\n\nABOUT\nTechnical professional with hands-on engineering experience, strong customer empathy, and proven ability to translate business needs into technical solutions.\n\nCORE SKILLS\nProduct Strategy | Requirements Gathering | Agile/Scrum | Sprint Planning | Cross-functional Collaboration | UAT Coordination | Stakeholder Communication | Technical Documentation\n\nEXPERIENCE\n- Work directly with clients and business teams to gather requirements and create detailed design documents\n- Coordinate with QA, business teams on UAT and production releases\n- Generate stakeholder dashboards and reports for data-driven decision-making\n- Lead cross-functional collaboration in agile sprint cycles"
+  }
+]
