@@ -35,6 +35,7 @@ Job Description and Base Resume are passed through TinyLlama-1.1B with a fine-tu
 | Fine-tuning | LoRA via PEFT library |
 | Training | Google Colab (T4 GPU) |
 | Serving | Gradio + Hugging Face Spaces |
+| AI Backend | Google Gemini 2.5 Flash API |
 | Language | Python |
 
 ## Training Details
