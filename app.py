@@ -1,71 +1,85 @@
 import gradio as gr
-import torch
-from transformers import AutoModelForCausalLM, AutoTokenizer
-from peft import PeftModel
+import google.generativeai as genai
+import pdfplumber
+import docx2txt
+import os
 
-BASE_MODEL = "TinyLlama/TinyLlama-1.1B-Chat-v1.0"
-ADAPTER_REPO = "akshayrinku/tinyllama-resume-tailor-lora"
+# Load Gemini API key from environment
+GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
+genai.configure(api_key=GEMINI_API_KEY)
+model = genai.GenerativeModel("gemini-2.5-flash")
 
-print("Loading tokenizer...")
-tokenizer = AutoTokenizer.from_pretrained(BASE_MODEL, trust_remote_code=True)
-tokenizer.pad_token = tokenizer.eos_token
-
-print("Loading base model...")
-base_model = AutoModelForCausalLM.from_pretrained(
-    BASE_MODEL,
-    torch_dtype=torch.float16,
-    device_map="auto",
-    trust_remote_code=True,
-)
-
-print("Loading LoRA adapter...")
-model = PeftModel.from_pretrained(base_model, ADAPTER_REPO)
-model.eval()
-print("Model ready")
+print("Gemini model ready")
 
 
-def tailor_resume(job_description, base_resume):
-    if not job_description.strip() or not base_resume.strip():
-        return "Please provide both a job description and a base resume."
+def extract_text_from_file(file):
+    if file is None:
+        return ""
+    file_path = file if isinstance(file, str) else file.name
+    ext = os.path.splitext(file_path)[-1].lower()
+    try:
+        if ext == ".pdf":
+            text = ""
+            with pdfplumber.open(file_path) as pdf:
+                for page in pdf.pages:
+                    page_text = page.extract_text()
+                    if page_text:
+                        text += page_text + "\n"
+            return text.strip()
+        elif ext in [".docx", ".doc"]:
+            return docx2txt.process(file_path).strip()
+        elif ext == ".txt":
+            with open(file_path, "r", encoding="utf-8") as f:
+                return f.read().strip()
+        else:
+            return "Unsupported file type. Please upload PDF, DOCX, or TXT."
+    except Exception as e:
+        return f"Error reading file: {str(e)}"
 
-    prompt = f"""### Instruction:
-Tailor the following resume to match the job description provided. Optimize keywords, reorder skills by relevance, and emphasize matching experience.
 
-### Job Description:
+def tailor_resume(job_description, resume_file, base_resume_text):
+    if resume_file is not None:
+        base_resume = extract_text_from_file(resume_file)
+        if base_resume.startswith("Error") or base_resume.startswith("Unsupported"):
+            return base_resume
+    elif base_resume_text.strip():
+        base_resume = base_resume_text.strip()
+    else:
+        return "Please either upload your resume file or paste your resume text below."
+
+    if not job_description.strip():
+        return "Please paste the job description."
+
+    prompt = f"""You are an expert resume writer and ATS optimization specialist.
+Your task is to tailor the candidate's resume to match the job description provided.
+Instructions:
+- Reorder and emphasize skills that match the job description
+- Incorporate relevant keywords from the job description naturally
+- Highlight the most relevant experience and projects
+- Keep all information factually accurate — do not invent experience
+- Format the output as a clean, professional resume
+- Include sections: Summary, Skills, Experience, Projects, Education, Certifications
+Job Description:
 {job_description}
-
-### Base Resume:
+Candidate's Base Resume:
 {base_resume}
+Now write the tailored resume:"""
 
-### Tailored Resume:
-"""
-
-    inputs = tokenizer(prompt, return_tensors="pt").to(model.device)
-
-    with torch.no_grad():
-        outputs = model.generate(
-            **inputs,
-            max_new_tokens=500,
-            temperature=0.7,
-            do_sample=True,
-            top_p=0.9,
-            pad_token_id=tokenizer.eos_token_id,
-        )
-
-    decoded = tokenizer.decode(outputs[0], skip_special_tokens=True)
-    tailored = decoded.split("### Tailored Resume:")[-1].strip()
-    return tailored
+    try:
+        response = model.generate_content(prompt)
+        return response.text
+    except Exception as e:
+        return f"Error generating response: {str(e)}"
 
 
-with gr.Blocks(title="Resume Tailor LLM", theme=gr.themes.Soft()) as demo:
+with gr.Blocks(title="Resume Tailor LLM") as demo:
     gr.Markdown(
         """
         # Resume Tailor LLM
-        ### Fine-tuned Phi-2 with LoRA — built by Akshay Pillalamarri
-
-        Paste a job description and your base resume. Get a tailored, ATS-optimized version that emphasizes the right skills and keywords for the role.
-
-        **Tech stack:** Python, Hugging Face Transformers, PEFT (LoRA), Microsoft Phi-2, Gradio
+        ### Powered by Gemini AI + Fine-tuned LoRA Research — built by Akshay Pillalamarri
+        Paste a job description and upload your resume (PDF or DOCX). Get a tailored,
+        ATS-optimized version that emphasizes the right skills and keywords for the role.
+        **Tech stack:** Python, Google Gemini API, Hugging Face, PEFT (LoRA), Gradio
         """
     )
 
@@ -74,34 +88,47 @@ with gr.Blocks(title="Resume Tailor LLM", theme=gr.themes.Soft()) as demo:
             jd_input = gr.Textbox(
                 label="Job Description",
                 placeholder="Paste the job description here...",
-                lines=10,
+                lines=10
             )
-            resume_input = gr.Textbox(
-                label="Base Resume",
-                placeholder="Paste your base resume here...",
-                lines=10,
+            gr.Markdown("### Your Resume")
+            gr.Markdown("**Option 1 — Upload file (PDF or DOCX recommended)**")
+            resume_file = gr.File(
+                label="Upload Resume",
+                file_types=[".pdf", ".docx", ".doc", ".txt"],
+                type="filepath"
             )
-            submit_btn = gr.Button("Tailor My Resume", variant="primary")
+            gr.Markdown("**Option 2 — Or paste resume text below**")
+            resume_text = gr.Textbox(
+                label="Paste Resume Text",
+                placeholder="Or paste your resume here if you prefer...",
+                lines=8
+            )
+            submit_btn = gr.Button("Tailor My Resume", variant="primary", size="lg")
 
         with gr.Column():
             output = gr.Textbox(
-                label="Tailored Resume",
-                lines=22,
-                show_copy_button=True,
+                label="Tailored Resume Output",
+                lines=30,
+                placeholder="Your tailored resume will appear here..."
             )
 
     gr.Markdown(
         """
         ---
-        **About this project:**
-        This is a fine-tuned version of Microsoft Phi-2 (2.7B parameters) using LoRA on a custom dataset of resume-JD pairs. Built as part of my AI engineering portfolio.
-
-        Connect: [LinkedIn](https://www.linkedin.com/in/akshay-pillalamarri) | [GitHub](https://github.com/akshaypillalamarri) | [Portfolio](https://akshaypillalamarri.github.io)
+        **About this project:** This demo uses Google Gemini for high-quality resume tailoring.
+        The underlying research involved fine-tuning TinyLlama-1.1B with LoRA — see the
+        [GitHub repo](https://github.com/akshaypillalamarri/resume-tailor-llm) and
+        [HuggingFace model](https://huggingface.co/akshayrinku/tinyllama-resume-tailor-lora) for details.
+        Connect: [LinkedIn](https://www.linkedin.com/in/akshay-pillalamarri) |
+        [GitHub](https://github.com/akshaypillalamarri) |
+        [Portfolio](https://akshaypillalamarri.github.io)
         """
     )
 
-    submit_btn.click(fn=tailor_resume, inputs=[jd_input, resume_input], outputs=output)
+    submit_btn.click(
+        fn=tailor_resume,
+        inputs=[jd_input, resume_file, resume_text],
+        outputs=output
+    )
 
-
-if __name__ == "__main__":
-    demo.launch()
+demo.launch()
